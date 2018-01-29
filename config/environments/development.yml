@@ -1,0 +1,30 @@
+secret_key_base: uyeFbeMuL4O4JOAC_bkroKfyc3QdBesMv0ZspZQOKHg
+port: 3000
+name: crystalshards
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
+host: 0.0.0.0
+port_reuse: true
+process_count: 1
+redis_url: "redis://localhost:6379"
+database_url: postgres://postgres:@localhost:5432/crystalshards_development
+session:
+  key: amber.session
+  store: signed_cookie
+  expires: 0
+
+secrets:
+  description: Store your development secrets credentials and settings here.
